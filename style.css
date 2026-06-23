@@ -1,0 +1,187 @@
+:root {
+    --bg-color: #0f172a;
+    --card-bg: #1e293b;
+    --text-color: #f8fafc;
+    --accent: #6366f1;
+    --accent-hover: #4f46e5;
+    
+    /* Category Badges colors */
+    --badge-tech: #38bdf8;
+    --badge-groceries: #4ade80;
+    --badge-clothes: #f472b6;
+    --badge-other: #a78bfa;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    display: flex;
+    justify-content: center;
+    padding-top: 3rem;
+    min-height: 100vh;
+}
+
+.container {
+    width: 100%;
+    max-width: 600px;
+    background: var(--card-bg);
+    padding: 2rem;
+    border-radius: 12px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+    height: fit-content;
+}
+
+h1 {
+    text-align: center;
+    margin-bottom: 1.5rem;
+    font-size: 2rem;
+    letter-spacing: 0.5px;
+}
+
+.input-section {
+    display: flex;
+    gap: 0.5rem;
+    margin-bottom: 1.5rem;
+}
+
+input[type="text"], select {
+    background: #334155;
+    border: 1px solid #475569;
+    color: white;
+    padding: 0.75rem;
+    border-radius: 6px;
+    outline: none;
+    font-size: 0.95rem;
+}
+
+input[type="text"] {
+    flex: 1;
+}
+
+button {
+    background: var(--accent);
+    color: white;
+    border: none;
+    padding: 0.75rem 1.2rem;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: background 0.2s ease;
+}
+
+button:hover {
+    background: var(--accent-hover);
+}
+
+.filter-section {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 1.5rem;
+    padding-bottom: 1rem;
+    border-bottom: 1px solid #334155;
+}
+
+.filter-section label {
+    font-size: 0.9rem;
+    color: #94a3b8;
+}
+
+.wishlist {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+}
+
+.wishlist-item {
+    display: flex;
+    align-items: center;
+    background: #334155;
+    padding: 0.75rem 1rem;
+    border-radius: 8px;
+    animation: fadeIn 0.2s ease-in-out;
+}
+
+.wishlist-item.bought {
+    opacity: 0.5;
+}
+
+.wishlist-item.bought .item-text {
+    text-decoration: line-through;
+    color: #94a3b8;
+}
+
+/* Custom Checkbox Design */
+.checkbox-container {
+    display: inline-block;
+    position: relative;
+    padding-left: 25px;
+    margin-right: 10px;
+    cursor: pointer;
+}
+
+.checkbox-container input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+}
+
+.checkmark {
+    position: absolute;
+    top: -2px;
+    left: 0;
+    height: 18px;
+    width: 18px;
+    background-color: #475569;
+    border-radius: 4px;
+}
+
+.checkbox-container input:checked ~ .checkmark {
+    background-color: var(--accent);
+}
+
+.item-text {
+    flex: 1;
+    font-size: 1rem;
+    word-break: break-all;
+}
+
+/* Category Badges styles */
+.badge {
+    font-size: 0.75rem;
+    padding: 0.2rem 0.6rem;
+    border-radius: 20px;
+    font-weight: 600;
+    color: #0f172a;
+    margin-right: 10px;
+}
+
+.badge.tech { background: var(--badge-tech); }
+.badge.groceries { background: var(--badge-groceries); }
+.badge.clothes { background: var(--badge-clothes); }
+.badge.other { background: var(--badge-other); }
+
+.delete-btn {
+    background: transparent;
+    color: #ef4444;
+    padding: 0.2rem 0.5rem;
+    font-size: 1.1rem;
+}
+
+.delete-btn:hover {
+    background: #451a1a;
+    color: #f87171;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(5px); }
+    to { opacity: 1; transform: translateY(0); }
+}
