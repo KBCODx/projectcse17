@@ -1,0 +1,144 @@
+:root {
+  --bg-color: #0f172a;
+  --card-bg: #1e293b;
+  --text-color: #f8fafc;
+  --accent: #6366f1;
+  --accent-hover: #4f46e5;
+  
+  --badge-tech: #38bdf8;
+  --badge-groceries: #4ade80;
+  --badge-clothes: #f472b6;
+  --badge-other: #a78bfa;
+}
+
+body {
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  margin: 0;
+  padding: 2rem 1rem;
+  display: flex;
+  justify-content: center; /* Horizontally centers your app container */
+  align-items: flex-start; /* Aligns app toward the top, allowing scrolling if list grows */
+  min-height: 100vh;
+  width: 100%;
+}
+
+.container {
+  width: 100%;
+  max-width: 600px; /* Limits size on large monitors */
+  min-width: 320px; /* Prevents breaking on smaller mobile viewports */
+  background: var(--card-bg);
+  padding: 2rem;
+  border-radius: 12px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+  margin: 0 auto; /* Extra insurance fallback for horizontal alignment centering */
+}
+
+h1 {
+  text-align: center;
+  margin-bottom: 1.5rem;
+}
+
+.input-section {
+  display: flex;
+  gap: 0.5rem;
+  margin-bottom: 1.5rem;
+}
+
+input[type="text"], select {
+  background: #334155;
+  border: 1px solid #475569;
+  color: white;
+  padding: 0.75rem;
+  border-radius: 6px;
+  outline: none;
+}
+
+input[type="text"] {
+  flex: 1;
+}
+
+button.add-btn {
+  background: var(--accent);
+  color: white;
+  border: none;
+  padding: 0.75rem 1.2rem;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+button.add-btn:hover {
+  background: var(--accent-hover);
+}
+
+.filter-section {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 1.5rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid #334155;
+}
+
+.filter-section label {
+  color: #94a3b8;
+}
+
+.wishlist {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.wishlist-item {
+  display: flex;
+  align-items: center;
+  background: #334155;
+  padding: 0.75rem 1rem;
+  border-radius: 8px;
+}
+
+.wishlist-item.bought {
+  opacity: 0.5;
+}
+
+.wishlist-item.bought .item-text {
+  text-decoration: line-through;
+  color: #94a3b8;
+}
+
+.checkbox-container {
+  margin-right: 15px;
+  cursor: pointer;
+  transform: scale(1.2);
+}
+
+.item-text {
+  flex: 1;
+}
+
+.badge {
+  font-size: 0.75rem;
+  padding: 0.2rem 0.6rem;
+  border-radius: 20px;
+  font-weight: 600;
+  color: #0f172a;
+  margin-right: 10px;
+}
+
+.badge.tech { background: var(--badge-tech); }
+.badge.groceries { background: var(--badge-groceries); }
+.badge.clothes { background: var(--badge-clothes); }
+.badge.other { background: var(--badge-other); }
+
+.delete-btn {
+  background: transparent;
+  color: #ef4444;
+  border: none;
+  font-size: 1.3rem;
+  cursor: pointer;
+}
